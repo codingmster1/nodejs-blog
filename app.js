@@ -6,6 +6,10 @@ const expressLayout = require('express-ejs-layouts')
 const app = express();
 const PORT = 5000 || process.env.PORT;
 
+
+app.use(expressLayout);
+app.set('layout', './layouts/main')
+
 app.get ('', (req, res) => {
     res.send("Hello World");
 });
