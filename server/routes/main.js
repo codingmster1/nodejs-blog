@@ -12,8 +12,43 @@ router.get ('', (req, res) => {
     res.render('index', { locals });
 });
 
+
+
 router.get ('/about', (req, res) => {
     res.render('about');
 });
 
 module.exports = router;
+
+
+
+
+/* function insertPostData () {
+    Post.insertMany([
+        {
+            title: "building a blog",
+            body: "this is the body text"
+        },
+        {
+            title: "Deployment of Node.js applications",
+            body: "this is the body text"
+        },
+        {
+            title: "building a blog",
+            body: "this is the body text"
+        },
+        {
+            title: "building a blog",
+            body: "this is the body text"
+        },
+        {
+            title: "building a blog",
+            body: "this is the body text"
+        },
+        {
+            title: "building a blog",
+            body: "this is the body text"
+        },
+    ])
+}
+insertPostData(); */
