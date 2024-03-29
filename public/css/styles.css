@@ -126,8 +126,10 @@
   }
   
   .header__logo {
-    font-weight: 800;
-    font-size: 25px;
+    font-family: "Nosifer", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
     text-decoration: none;
     grid-area: logo;
   }
@@ -199,12 +201,13 @@
   }
   
   .author__heading {
+    font-size: 50px;
     margin-top: 10px;
     margin-bottom: 5px;
   }
   
   .author__body {
-    font-size: var(--font-size-md);
+    font-size: 15px;
     margin: 5px 0 40px 0;
   }
   

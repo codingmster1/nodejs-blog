@@ -6,7 +6,7 @@ const router = express.Router();
 router.get ('', (req, res) => {
 
     const locals = {
-        title: "NodeJs Blog",
+        title: "Cat's Name Blog",
         description: "Blog created in nodeJs and mongodb"
     }
     res.render('index', { locals });
