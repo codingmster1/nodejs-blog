@@ -129,7 +129,7 @@
     font-family: "Nosifer", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     text-decoration: none;
     grid-area: logo;
   }
@@ -168,11 +168,13 @@
     color: var(--black);
   }
   
-  .header__button button:hover {
+ .header__button button:hover {
     border: 2px solid var(--black);
   }
   
   /* Header -> Navigation */
+
+  
   .header__nav ul {
     list-style-type: none;
     display: flex;
