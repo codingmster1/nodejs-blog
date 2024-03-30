@@ -326,8 +326,8 @@
   
   /* SeachBar */
   .searchBar {
-    /* visibility: hidden;
-    transform: translateY(-100px); */
+    visibility: hidden;
+    transform: translateY(-100px);
     background-color: var(--black);
     padding: 4px 0;
     position: absolute;
@@ -352,6 +352,7 @@
     right: 0;
     color: var(--gray-light);
     padding: 15px;
+    cursor: pointer;
   }
   
   
