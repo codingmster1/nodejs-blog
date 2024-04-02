@@ -190,6 +190,47 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
       });
 
 
+// GET EDIT POST
+
+router.get('/edit-post/:id', authMiddleware, async (req, res) => {
+    try {
+        const locals = {
+            title: "Edit Post",
+            description: "Free NodeJs User Management System",
+          };
+      
+          const data = await Post.findOne({ _id: req.params.id });
+      
+          res.render('admin/edit-post', {
+            locals,
+            data,
+            layout: adminLayout
+          })
+      
+        } catch (error) {
+          console.log(error);
+        }
+      
+      });
+
+
+
+// DELETE POST
+
+      router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
+        try {
+            await Post.deleteOne( { _id: req.params.id } );
+            res.redirect('/dashboard');
+          } catch (error) {
+            console.log(error);
+          }
+        
+      })
+
+
+
+
+
   // Get Admin Register
 
 router.post('/register', async (req, res) => {
