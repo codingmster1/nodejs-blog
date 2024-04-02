@@ -27,7 +27,8 @@ res.render('index', {
     locals, 
     data,
     current: page, 
-    nextPage: hasNextPage ? nextPage : null
+    nextPage: hasNextPage ? nextPage : null,
+    currentRoute: '/'
 });
     
 
@@ -56,7 +57,8 @@ router.get('/post/:id', async (req, res) => {
       
         res.render('post', { 
         locals,
-        data
+        data,
+        currentRoute: `/post/${slug}`
       });
     } catch (error) {
       console.log(error);
@@ -90,7 +92,7 @@ router.post('/search', async (req, res) => {
       res.render("search", {
         data,
         locals,
-       // currentRoute: '/'
+        currentRoute: '/'
       });
   
     } catch (error) {
@@ -100,15 +102,10 @@ router.post('/search', async (req, res) => {
   });
 
 
-
-
-
-
-
-
-
 router.get ('/about', (req, res) => {
-    res.render('about');
+    res.render('about', {
+        currentRoute: '/about'
+      });
 });
 
 module.exports = router;
