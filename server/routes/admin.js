@@ -11,7 +11,7 @@ const jwtSecret = process.env.JWT_SECRET;
 
 /**
  * 
- * Check Login
+ * Check Login Status
 */
 const authMiddleware = (req, res, next ) => {
     const token = req.cookies.token;
@@ -52,7 +52,7 @@ router.get('/admin', async (req, res) => {
 
 
 
-// Get Admin Check Login
+// POST Admin Check Login
 
 router.post('/admin', async (req, res) => {
     try {
@@ -104,7 +104,7 @@ router.post('/admin', async (req, res) => {
 
 
 
-  // CREATE NEW POST 
+  // GET CREATE NEW POST 
   
   router.get('/add-post', authMiddleware, async (req, res) => {
     try {
@@ -125,7 +125,7 @@ router.post('/admin', async (req, res) => {
     
       })
 
- // Fetch and Store New Post In Database
+ // POST/Fetch and Store New Post In Database
   
  router.post('/add-post', authMiddleware, async (req, res) => {
     try {
@@ -147,6 +147,47 @@ router.post('/admin', async (req, res) => {
     });
 
 
+// PUT EDIT POST
+
+    router.put('/edit-post/:id', authMiddleware, async (req, res) => {
+        try {
+            await Post.findByIdAndUpdate(req.params.id, {
+                title: req.body.title,
+                body: req.body.body,
+                updatedAt: Date.now()
+            });
+
+            res.redirect(`/edit-post/${req.params.id}`);
+          
+        } catch (error) {
+            console.log(error);
+          }
+
+        });
+    
+    
+// GET EDIT POST
+
+router.get('/edit-post/:id', authMiddleware, async (req, res) => {
+    try {
+        const locals = {
+            title: "Edit Post",
+            description: "Free NodeJs User Management System",
+          };
+      
+          const data = await Post.findOne({ _id: req.params.id });
+      
+          res.render('admin/edit-post', {
+            locals,
+            data,
+            layout: adminLayout
+          })
+      
+        } catch (error) {
+          console.log(error);
+        }
+      
+      });
 
 
   // Get Admin Register
