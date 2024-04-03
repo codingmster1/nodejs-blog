@@ -282,6 +282,12 @@
   .article {
     white-space: pre-wrap;
   }
+
+  .noHover
+  { 
+    pointer-events: none;
+    cursor: not-allowed;
+  }
   
   
   /* Footer */
