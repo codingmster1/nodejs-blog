@@ -197,6 +197,25 @@
   }
   
   /* Author - HomePage */
+
+
+  .intro {
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    font-size: 25px;
+  }
+
+  .about {
+    font-family: "Special Elite", system-ui;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em transparent;
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .10em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .3s step-end infinite;
+  }
   .author {
     padding: 10px 0;
     text-align: center;
@@ -334,7 +353,7 @@
   .searchBar {
     visibility: hidden;
     transform: translateY(-100px);
-    background-color: var(--black);
+    background-color: orange;
     padding: 4px 0;
     position: absolute;
     left: 0;
@@ -356,7 +375,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--gray-light);
+    color: white;
     padding: 15px;
     cursor: pointer;
   }
