@@ -120,6 +120,12 @@
   }
   
   @media only screen and (min-width: 768px) {
+    .header__logo {
+        font-size: 10px;
+        font-weight: 400;
+        text-decoration: none;
+        grid-area: logo;
+    }
     .header {
       grid-template-columns: auto 1fr auto;
       grid-template-areas: 
@@ -267,6 +273,7 @@
   }
   
   @media only screen and (min-width: 768px) {
+    
     .article-ul li a {
       flex-direction: row;
       align-items: center;
