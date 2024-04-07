@@ -302,9 +302,9 @@
   
   .article {
     white-space: pre-wrap;
-    font-family: "Caveat", cursive;
-    font-weight: 600;
-    font-size: 22px;
+    font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
   }
 
   .noHover
