@@ -50,7 +50,7 @@
 
   .fade-in-image /*fade in for about image*/
   {
-    animation: fadeIn 5s;
+    animation: fadeIn 4s;
   }
 
   .fade-in /* fade in for quote text*/
